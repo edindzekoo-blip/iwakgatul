@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iwak Gatul</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f7f5;
+            color: #222;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: #075c43;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #9ff0c7;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: bold;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 520px;
+            padding: 70px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            background: linear-gradient(135deg, #dff8eb, white);
+        }
+
+        .hero-text {
+            max-width: 550px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            color: #075c43;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #075c43;
+            color: white;
+            padding: 14px 25px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #043d2d;
+        }
+
+        .hero-img {
+            width: 500px;
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        /* PRODUK */
+        .produk {
+            padding: 70px 8%;
+        }
+
+        .judul {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .judul h2 {
+            color: #075c43;
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .judul p {
+            color: #666;
+        }
+
+        .produk-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 18px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 14px;
+        }
+
+        .card h3 {
+            color: #075c43;
+            margin-top: 15px;
+        }
+
+        .card p {
+            color: #666;
+            margin-top: 8px;
+            line-height: 1.5;
+        }
+
+        .harga {
+            font-size: 21px;
+            font-weight: bold;
+            color: #e66b18;
+            margin: 15px 0;
+        }
+
+        .card .btn {
+            width: 100%;
+        }
+
+        /* KEUNGGULAN */
+        .keunggulan {
+            padding: 60px 8%;
+            background: #075c43;
+            color: white;
+        }
+
+        .keunggulan h2 {
+            text-align: center;
+            margin-bottom: 35px;
+            font-size: 32px;
+        }
+
+        .fitur-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            text-align: center;
+        }
+
+        .fitur {
+            padding: 20px;
+        }
+
+        .fitur .icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .fitur p {
+            color: #d9f5e8;
+            margin-top: 8px;
+        }
+
+        /* TENTANG */
+        .tentang {
+            padding: 70px 8%;
+            background: white;
+            text-align: center;
+        }
+
+        .tentang h2 {
+            color: #075c43;
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .tentang p {
+            max-width: 750px;
+            margin: auto;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #043d2d;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* HP */
+        @media (max-width: 700px) {
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav a {
+                margin-left: 10px;
+                font-size: 13px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 55px 6%;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero-img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">
+            Iwak <span>Gatul</span>
+        </div>
+
+        <div>
+            <a href="#home">Home</a>
+            <a href="#produk">Produk</a>
+            <a href="#tentang">Tentang</a>
+        </div>
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+            <h1>Iwak Gatul</h1>
+
+            <p>
+                Iwak Gatul pilihan dengan kualitas terbaik.
+                Segar, lezat, dan cocok untuk lauk sehari-hari.
+            </p>
+
+            <a href="#produk" class="btn">
+                Lihat Produk
+            </a>
+        </div>
+
+        <img src="iwak-gatul.jpg" class="hero-img" alt="Iwak Gatul">
+
+    </section>
+
+
+    <!-- PRODUK -->
+    <section class="produk" id="produk">
+
+        <div class="judul">
+            <h2>Produk Kami</h2>
+            <p>Pilih produk Iwak Gatul favoritmu</p>
+        </div>
+
+        <div class="produk-container">
+
+            <div class="card">
+
+                <img src="iwak-gatul.jpg" alt="Iwak Gatul Segar">
+
+                <h3>Iwak Gatul Segar</h3>
+
+                <p>
+                    Iwak Gatul segar pilihan dengan kualitas terbaik.
+                </p>
+
+                <div class="harga">
+                    Rp15.000
+                </div>
+
+                <button class="btn"
+                    onclick="pesan('Iwak Gatul Segar')">
+                    Pesan Sekarang
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <img src="iwak-gatul.jpg" alt="Iwak Gatul">
+
+                <h3>Iwak Gatul Premium</h3>
+
+                <p>
+                    Iwak Gatul pilihan dengan ukuran dan kualitas terbaik.
+                </p>
+
+                <div class="harga">
+                    Rp20.000
+                </div>
+
+                <button class="btn"
+                    onclick="pesan('Iwak Gatul Premium')">
+                    Pesan Sekarang
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <img src="iwak-gatul.jpg" alt="Paket Iwak Gatul">
+
+                <h3>Paket Iwak Gatul</h3>
+
+                <p>
+                    Paket Iwak Gatul untuk keluarga dengan porsi lebih banyak.
+                </p>
+
+                <div class="harga">
+                    Rp35.000
+                </div>
+
+                <button class="btn"
+                    onclick="pesan('Paket Iwak Gatul')">
+                    Pesan Sekarang
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- KEUNGGULAN -->
+    <section class="keunggulan">
+
+        <h2>Kenapa Pilih Iwak Gatul?</h2>
+
+        <div class="fitur-container">
+
+            <div class="fitur">
+                <div class="icon">🐟</div>
+                <h3>Segar</h3>
+                <p>Produk berkualitas dan segar.</p>
+            </div>
+
+            <div class="fitur">
+                <div class="icon">💰</div>
+                <h3>Harga Terjangkau</h3>
+                <p>Harga ramah di kantong.</p>
+            </div>
+
+            <div class="fitur">
+                <div class="icon">📦</div>
+                <h3>Kemasan Rapi</h3>
+                <p>Dikemas dengan aman dan rapi.</p>
+            </div>
+
+            <div class="fitur">
+                <div class="icon">⚡</div>
+                <h3>Pelayanan Cepat</h3>
+                <p>Pesanan diproses dengan cepat.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TENTANG -->
+    <section class="tentang" id="tentang">
+
+        <h2>Tentang Kami</h2>
+
+        <p>
+            Iwak Gatul menyediakan ikan pilihan dengan kualitas yang baik
+            dan harga yang terjangkau. Kami berusaha memberikan produk
+            yang segar serta pelayanan terbaik untuk pelanggan.
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Iwak Gatul | Toko Ikan Pilihan</p>
+    </footer>
+
+
+    <script>
+
+        function pesan(produk) {
+
+            // Nomor WhatsApp
+            let nomor = "6282131618783";
+
+            let teks =
+                "Halo, saya ingin memesan " +
+                produk +
+                ". Apakah masih tersedia?";
+
+            let link =
+                "https://wa.me/" +
+                nomor +
+                "?text=" +
+                encodeURIComponent(teks);
+
+            window.open(link, "_blank");
+        }
+
+    </script>
+
+</body>
+</html>
